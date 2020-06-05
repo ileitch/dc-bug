@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  frontend:
+    env_file: Frontend/.env
+    build:
+      context: Frontend
+      dockerfile: Dockerfile
+      args:
+        MY_ENV: ${MY_ENV}
+    ports:
+      - "8080:8080"
